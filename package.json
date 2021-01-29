@@ -36,10 +36,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "tsc --noEmit"
     }
   },
   "lint-staged": {
-    "*.{js,ts}": ["eslint --cache --fix", "prettier --write"]
+    "*.{js,jsx,ts,tsx,md,html,css,json}": [
+      "prettier --write"
+    ],
+    "*.{js,ts}": [
+      "eslint --cache --fix"
+    ]
   }
 }
